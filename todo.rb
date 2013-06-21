@@ -1,6 +1,4 @@
 require_relative 'config/application'
 
-puts "Put your application code in #{File.expand_path(__FILE__)}"
-
 list_controller = ListController.new
 list_controller.run
