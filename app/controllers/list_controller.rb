@@ -13,7 +13,20 @@ class ListController
   end
 
   def list(arguments)
-    p "I am Listing a whole bunch of stuff"
+    @tasks = Task.all
+    print_tasks
+  end
+
+  def add(arguments)
+    @task = Task.create(item: arguments.to_s)
+    print_add_message
+  end
+
+  def delete(arguments)
+    @task = Task.find(arguments.to_i)
+    @deleted_item = @task.item
+    @task.delete
+    print_delete_message
   end
 
 end
